@@ -18,7 +18,9 @@ const fetchDrinks = async (input) => {
         <div class="drink"> 
           <img src="${element.strDrinkThumb}" height="300" width="300" alt="drink">
           <h2>${element.strDrink}</h2>
+          <h3>Instructions</h3>
           <p>${element.strInstructions}</p>
+          <h3>Ingredients</h3>
         </div>`;
 
         document.querySelector("#drinks").innerHTML = html;
@@ -33,3 +35,6 @@ searchBtn.addEventListener("click", (e) => {
   fetchDrinks(userInput);
   inputString.value = "";
 });
+
+// Pre-Loaded Drinks
+fetchDrinks("smoothie");
